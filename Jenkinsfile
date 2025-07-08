@@ -10,7 +10,13 @@ pipeline {
 
         stage('Run Talend Job') {
             steps {
-                bat 'cd job32 && job32_run.bat'
+                bat '''
+                    cd job32\\job32
+                    echo Listing files before execution...
+                    dir
+                    echo Running Talend job...
+                    job32_run.bat
+                '''
             }
         }
     }
