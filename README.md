@@ -1,7 +1,9 @@
  🔄 SyncStream – GitHub-Triggered CDC Pipeline
 
-SyncStream is a **Change Data Capture (CDC) pipeline** that leverages **Talend**, **Jenkins**, and **GitHub webhooks** to provide an **event-driven, automated ETL workflow**. 
+SyncStream is a **Change Data Capture (CDC) pipeline** that leverages **Talend**, **Jenkins**, and **GitHub webhooks** to provide an **event-driven, automated ETL workflow**.
 The pipeline ensures that every code commit or data update triggers incremental processing with **traceability** and **minimal manual intervention**.
+
+---
 
 ## ✨ Features
 - ⚡ **Event-Driven ETL** → Automatically triggered via **GitHub webhooks**  
@@ -11,14 +13,17 @@ The pipeline ensures that every code commit or data update triggers incremental 
 - 📂 **Traceability** → Logs and versioning ensure transparency and reproducibility  
 - 🔄 **Automated Workflow** → End-to-end automation, reducing operational overhead  
 
+---
+
 ## 🏗️ Architecture
 
 ```mermaid
 flowchart TD
-    A[🔔 GitHub Webhook] --> B[⚙️ Jenkins Pipeline]
-    B --> C[📦 Talend CDC Job]
-    C --> D[💾 Target Database]
-    D --> E[📊 Processed & Incremental Data]
+    A[GitHub Webhook] --> B[Jenkins Pipeline]
+    B --> C[Talend CDC Job]
+    C --> D[Target Database]
+    D --> E[Processed & Incremental Data]
+
 Webhook → A commit or event in GitHub triggers the webhook
 
 Jenkins → Executes the automation pipeline
